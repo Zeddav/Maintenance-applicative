@@ -2,8 +2,9 @@ import java.time.LocalDate;
 
 public class DateUtils {
     public static boolean isNowBetween(LocalDate startingDate, LocalDate endingDate) {
-        LocalDate now = LocalDate.now();
-        return isABoolean(startingDate, endingDate, now);
+        return LocalDate.now().isAfter(startingDate)
+                &&
+                LocalDate.now().isBefore(endingDate);
     }
 
     private static boolean isABoolean(LocalDate startingDate, LocalDate endingDate, LocalDate now) {
