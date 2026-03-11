@@ -7,14 +7,24 @@ public class DateUtils {
                 LocalDate.now().isBefore(endingDate);
     }
 
-    private static boolean isDateBetween(LocalDate startingDate, LocalDate endingDate, LocalDate now) {
-        return now.isAfter(startingDate)
+    private static boolean isDateBetween(LocalDate startingDate, LocalDate endingDate, LocalDate now, boolean inclusive) {
+        LocalDate startingDay; // sera le paramètre startingDate ou le lendemain du paramètre
+        LocalDate endingDay; // sera le paramètre endingDate ou le la veille du paramètre
+        if (inclusive) {
+            startingDay = startingDate.minusDays(1); // la veille
+            endingDay = startingDate.plusDays(1); // le lendemain
+        }
+        else {
+            startingDay = startingDate;
+            endingDay = endingDate;
+        }
+        return now.isAfter(startingDay)
                 &&
-                now.isBefore(endingDate);
+                now.isBefore(endingDay);
     }
 
     private static boolean isDateOutsider(LocalDate date, LocalDate startingDate, LocalDate
             endingDate) {
-        return !DateUtils.isDateBetween(date, startingDate, endingDate);
+        return !DateUtils.isDateBetween(date, startingDate, endingDate,  true );
     }
 }
