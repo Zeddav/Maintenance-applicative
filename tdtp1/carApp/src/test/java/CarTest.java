@@ -23,4 +23,26 @@ public class CarTest {
         car.slowDown();
         assertThat(car.getSpeed()).isEqualTo(0);
     }
+
+    @Test
+    public void testStartCar() {
+        Conductor conductor = new Conductor("John", 20);
+        car.startCar(conductor);
+        // How to assert that the demarrerVoiture method was called?
+    }
+
+    @Test
+    public void testStopCar() {
+        Conductor conductor = new Conductor("John", 20);
+        car.stopCar(conductor);
+        // How to assert that the arreterVoiture method was called?
+    }
+
+    @Test
+    public void testChangeSpeed() {
+        Conductor conductor = new Conductor("John", 20);
+
+        car.changeSpeed(conductor, 80);
+        assertThat(car.getSpeed()).isEqualTo(80);
+    }
 }

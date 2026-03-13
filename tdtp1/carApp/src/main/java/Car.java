@@ -51,5 +51,31 @@ public class Car {
             System.out.println("Car is already stopped.");
         }
     }
+
+    public void startCar(Conductor conductor) {
+        if (conductor.isAdult()) {
+            System.out.println(conductor.name + " start the car.");
+        } else {
+            System.out.println("The driver is not old enough to drive.");
+        }
+    }
+
+    public void stopCar(Conductor conductor) {
+        System.out.println(conductor.name + " stop the car.");
+    }
+
+    public void changeSpeed(Conductor conductor, int newSpeed) {
+        System.out.println(conductor.name + " change car speed to " + newSpeed);
+        int curentSpeed;
+        if (getSpeed() >= newSpeed) {
+            while (getSpeed() > newSpeed) {
+                slowDown();
+            }
+        } else  {
+            while (getSpeed() < newSpeed) {
+                accelerate();
+            }
+        }
+    }
 }
 
