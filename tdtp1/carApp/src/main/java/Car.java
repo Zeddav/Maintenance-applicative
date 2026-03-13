@@ -9,6 +9,21 @@ public class Car {
         this.speed = 0;
     }
 
+    public String getModel() {
+        return model;
+    }
+    public void setModel(String model) {
+        this.model = model;
+    }
+    public String getColor() {
+        return color;
+    }
+    public void setColor(String color) {
+        this.color = color;
+    }
+    public void setSpeed(final int speed) {
+        this.speed = speed;
+    }
     public int getSpeed() {
         return this.speed;
     }
