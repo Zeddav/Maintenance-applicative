@@ -1,0 +1,40 @@
+public class Car {
+    private String model;
+    private String color;
+    private int speed;
+
+    public Car(String model, String color) {
+        this.model = model;
+        this.color = color;
+        this.speed = 0;
+    }
+
+    public int getSpeed() {
+        return this.speed;
+    }
+
+    public void accelerate() {
+        if (speed + 10 <= 120) {
+            speed += 10;
+            // afficher détails
+            System.out.println("Model : " + model);
+            System.out.println("Color : " + color);
+            System.out.println("Current speed : " + speed);
+        } else {
+            System.out.println("Maximal speed already reached");
+        }
+    }
+
+    public void slowDown() {
+        if (speed - 10 >= 0) {
+            speed -= 10;
+            // show details
+            System.out.println("Model : " + model);
+            System.out.println("Color : " + color);
+            System.out.println("Current speed : " + speed);
+        } else {
+            System.out.println("Car is already stopped.");
+        }
+    }
+}
+
