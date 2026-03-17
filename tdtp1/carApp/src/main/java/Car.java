@@ -31,12 +31,12 @@ public class Car {
     public void accelerate() {
         if (speed + 10 <= 120) {
             speed += 10;
-            // afficher détails
+            // show details
             System.out.println("Model : " + model);
             System.out.println("Color : " + color);
             System.out.println("Current speed : " + speed);
         } else {
-            System.out.println("Maximal speed already reached");
+            System.out.println("Maximal speed already reached.");
         }
     }
 
@@ -54,18 +54,18 @@ public class Car {
 
     public void startCar(Conductor conductor) {
         if (conductor.isAdult()) {
-            System.out.println(conductor.name + " start the car.");
+            System.out.println(conductor.getName() + " start the car.");
         } else {
             System.out.println("The driver is not old enough to drive.");
         }
     }
 
     public void stopCar(Conductor conductor) {
-        System.out.println(conductor.name + " stop the car.");
+        System.out.println(conductor.getName() + " stop the car.");
     }
 
     public void changeSpeed(Conductor conductor, int newSpeed) {
-        System.out.println(conductor.name + " change car speed to " + newSpeed);
+        System.out.println(conductor.getName() + " change car speed to " + newSpeed);
         int curentSpeed;
         if (getSpeed() >= newSpeed) {
             while (getSpeed() > newSpeed) {
